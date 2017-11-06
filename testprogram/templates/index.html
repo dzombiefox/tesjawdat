@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+{% block title %} Data Interfaces {% endblock %}
+{% load static %}
+{% block content %}
+ <section class="content">
+ <div class="x_panel ">
+                  <div class="x_title">
+{#                    <h2>Welcome , Happy Working  <small>{% now "j F Y " %}</small></h2>#}
+                    <ul class="nav navbar-right panel_toolbox">
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+
+           <div class="section-body">
+                        <!-- BEGIN DATATABLE 2 -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+
+                                     <section>
+					<div class="section-body">
+						<div class="row">
+
+							<!-- BEGIN  - FORM -->
+							<div class="col-lg-12">
+ <div class="box-header with-border">
+              <h3 class="box-title">Contoh Interfaces</h3>
+            </div>
+<table class="table table-bordered table-striped">
+    <thead>
+    <th>No</th>
+    <th>Interface</th>
+    </thead>
+    <tbody>
+       {% for data in parse %}
+           <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ data }}</td>
+           </tr>
+       {% endfor %}
+    </tbody>
+</table>
+
+                            <div class="box-header with-border">
+              <h3 class="box-title">Output Json ("Ketika mengakses halaman ini program langsung create output.json di folder media/")</h3>
+            </div>
+                                <div class="col-sm-12"> {{ json }}</div>
+                            <br>
+
+                            </div>
+
+                        </div>
+                     <br><br></br>
+                    </div>
+
+
+
+                                </div>
+                            </div><!--end .col -->
+                        </div><!--end .row -->
+                        <!-- END DATATABLE 2 -->
+
+</div>
+
+
+
+ </section>
+
+{% endblock %}

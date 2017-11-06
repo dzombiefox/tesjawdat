@@ -1,0 +1,86 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LOGIN | SYSTEM </title>
+
+    <!-- Bootstrap -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/AdminLTE.min.css" %}" rel="stylesheet">
+    <!-- NProgress -->
+
+     <link href="{% static "css/bootstrap-material-design.min.css" %}" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="{% static "css/ripples.min.css" %}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{% static "css/MaterialAdminLTE.min.css" %}" rel="stylesheet">
+  </head>
+
+  <body class="hold-transition login-page">
+
+ <div class="login-box">
+
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+{#    <p class="login-box-msg">Sign in to start your session</p>#}
+	  <div class="login-logo" >
+
+   <a >TEST&nbsp;<b>PROGRAM</b></a>
+  </div>
+
+   	<form class="form floating-label" action="{% url 'login' %}" accept-charset="utf-8" method="post">
+		                        {% csrf_token %}
+        		                        {% if form.errors %}
+
+		                            <div class="alert alert-danger">
+		                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		                                <strong>Error!</strong> Your username and password didn't match. Please try again.
+		                            </div>
+
+		                        {% endif %}
+      <div class="form-group has-feedback">
+{#        <input type="email" class="form-control" placeholder="Email">#}
+          {{ form.username|add_class:"form-control" | attr:"placeholder:Username" |attr:"autocomplete=off" |attr:"required"}}
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+       {{ form.password|add_class:"form-control" | attr:"placeholder:Password"|attr:"required"  }}
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-7">
+
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-5">
+          <button type="submit" class="btn btn-primary btn-raised btn-block btn-flat">Sign In</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+
+
+
+  </div>
+  <!-- /.login-box-body -->
+</div>
+  <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+   <script src="{% static 'js/material.min.js' %}"></script>
+   <script src="{% static 'js/ripples.min.js' %}"></script>
+  <script>
+    $.material.init();
+  </script>
+  </body>
+
+</html>

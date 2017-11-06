@@ -1,0 +1,5 @@
+- program menggunakan django framework versi 1.8.7 dengan python 2.7 database sqlite3
+- install django  ,ciscoconfparse, widget_tweaks 
+- untuk menjalankannya :
+  masuk ke direktori testprogram kemudian jalankan perintah python manage.py runserver atau ./manage.py runserver 
+  username admin , password admin123
